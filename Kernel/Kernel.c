@@ -8,17 +8,10 @@
 }*/
 
 void __cdecl kmain() {
-	uint16_t* Con = (uint16_t*)0xB8000;
-	
+	// TODO: Paging, GDT, Long mode, loading x64 executable kernel
 
-	const char* SomeStr = "Hello Kernel World!\0";
-
-	while (*SomeStr) {
-		//*Con = vga_entry(*SomeStr, 15, 0);
-		*Con = (uint16_t)(*SomeStr) | (15 | 0 << 4) << 8;
-		SomeStr++;
-		Con++;
-	}
+	long long* Mem = 0xb8000;
+	*Mem = 0x2f592f412f4b2f4f;
 
 	while (1) {
 	}
