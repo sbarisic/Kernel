@@ -18,19 +18,13 @@
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Kernel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Kernel.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="itoa.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="order.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Kernel64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
