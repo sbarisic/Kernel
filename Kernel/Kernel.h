@@ -62,11 +62,11 @@ __declspec(allocate(".text")) MULTIBOOT_HEADER Hdr = {
 	MULTIBOOT_HEADER_FLAGS,
 	CHECKSUM,
 
-	&Hdr,
-	&Hdr,
+	(uint32_t)&Hdr,
+	(uint32_t)&Hdr,
 	0,
 	0,
-	&kmain,
+	(uint32_t)&kmain,
 
 	0,
 	800,

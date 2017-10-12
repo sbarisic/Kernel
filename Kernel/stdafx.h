@@ -9,3 +9,5 @@
 #define _WIN64
 #include <Windows.h>
 #undef _WIN64
+
+#define BREAK __asm { xchg bx, bx }

@@ -1,11 +1,23 @@
 #include "stdafx.h"
 
+#include <stdint.h>
+#include <intrin.h>
+
+uint16_t* VidMem;
+
+void write(const char* Str) {
+	int i = 0;
+
+	while (*Str) 
+		VidMem[i++] = (uint16_t)(*Str) | 15 << 8;
+}
 
 void __cdecl main() {
-	long long* Mem = 0xb8000;
-	*Mem = 0x2f592f412f4b2f4f;
+	//VidMem = (uint16_t*)0xb8000;
 
-	while (1) {
-	}
+	//write("LONG MODE BABY");
+
+	_disable();
+	__halt();
 }
 
