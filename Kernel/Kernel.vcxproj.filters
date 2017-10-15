@@ -33,4 +33,9 @@
   <ItemGroup>
     <Text Include="order.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="CPU32.asm">
+      <Filter>Source Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
 </Project>

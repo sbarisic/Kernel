@@ -54,6 +54,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
@@ -123,19 +124,31 @@
       <SubSystem>Native</SubSystem>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <GenerateMapFile>true</GenerateMapFile>
-      <FixedBaseAddress>false</FixedBaseAddress>
-      <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <BaseAddress>0x1000000</BaseAddress>
       <FunctionOrder>order.txt</FunctionOrder>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
-      <EntryPointSymbol>main</EntryPointSymbol>
-      <LargeAddressAware>true</LargeAddressAware>
+      <EntryPointSymbol>entry</EntryPointSymbol>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <SectionAlignment>1024</SectionAlignment>
-      <AdditionalOptions>/driver %(AdditionalOptions)</AdditionalOptions>
       <EnableUAC>false</EnableUAC>
+      <Driver>NotSet</Driver>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
+    <CustomBuild>
+      <Command>
+      </Command>
+    </CustomBuild>
+    <CustomBuild>
+      <Message>
+      </Message>
+    </CustomBuild>
+    <CustomBuild>
+      <Outputs>
+      </Outputs>
+    </CustomBuild>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -167,19 +180,31 @@
       <SubSystem>Native</SubSystem>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <GenerateMapFile>true</GenerateMapFile>
-      <FixedBaseAddress>false</FixedBaseAddress>
-      <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <BaseAddress>0x1000000</BaseAddress>
       <FunctionOrder>order.txt</FunctionOrder>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
-      <EntryPointSymbol>main</EntryPointSymbol>
-      <LargeAddressAware>true</LargeAddressAware>
+      <EntryPointSymbol>entry</EntryPointSymbol>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <SectionAlignment>1024</SectionAlignment>
-      <AdditionalOptions>/driver %(AdditionalOptions)</AdditionalOptions>
       <EnableUAC>false</EnableUAC>
+      <Driver>NotSet</Driver>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
+    <CustomBuild>
+      <Command>
+      </Command>
+    </CustomBuild>
+    <CustomBuild>
+      <Message>
+      </Message>
+    </CustomBuild>
+    <CustomBuild>
+      <Outputs>
+      </Outputs>
+    </CustomBuild>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -209,19 +234,31 @@
       <OptimizeReferences>true</OptimizeReferences>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <GenerateMapFile>true</GenerateMapFile>
-      <FixedBaseAddress>false</FixedBaseAddress>
-      <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <BaseAddress>0x1000000</BaseAddress>
       <FunctionOrder>order.txt</FunctionOrder>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
-      <EntryPointSymbol>main</EntryPointSymbol>
-      <LargeAddressAware>true</LargeAddressAware>
+      <EntryPointSymbol>entry</EntryPointSymbol>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <SectionAlignment>1024</SectionAlignment>
-      <AdditionalOptions>/driver %(AdditionalOptions)</AdditionalOptions>
       <EnableUAC>false</EnableUAC>
+      <Driver>NotSet</Driver>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
+    <CustomBuild>
+      <Command>
+      </Command>
+    </CustomBuild>
+    <CustomBuild>
+      <Message>
+      </Message>
+    </CustomBuild>
+    <CustomBuild>
+      <Outputs>
+      </Outputs>
+    </CustomBuild>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -252,19 +289,31 @@
       <OptimizeReferences>true</OptimizeReferences>
       <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
       <GenerateMapFile>true</GenerateMapFile>
-      <FixedBaseAddress>false</FixedBaseAddress>
-      <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <BaseAddress>0x1000000</BaseAddress>
       <FunctionOrder>order.txt</FunctionOrder>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
-      <EntryPointSymbol>main</EntryPointSymbol>
-      <LargeAddressAware>true</LargeAddressAware>
+      <EntryPointSymbol>entry</EntryPointSymbol>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <SectionAlignment>1024</SectionAlignment>
-      <AdditionalOptions>/driver %(AdditionalOptions)</AdditionalOptions>
       <EnableUAC>false</EnableUAC>
+      <Driver>NotSet</Driver>
+      <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <FixedBaseAddress>true</FixedBaseAddress>
     </Link>
+    <CustomBuild>
+      <Command>
+      </Command>
+    </CustomBuild>
+    <CustomBuild>
+      <Message>
+      </Message>
+    </CustomBuild>
+    <CustomBuild>
+      <Outputs>
+      </Outputs>
+    </CustomBuild>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -275,7 +324,25 @@
   <ItemGroup>
     <Text Include="order.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="CPU64.asm">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Program Files\NASM\nasm.exe" -f win64 %(FullPath) -o $(ProjectDir)nasm\%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Assembling %(Identity)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)nasm\%(Filename).obj;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Program Files\NASM\nasm.exe" -f win64 %(FullPath) -o $(ProjectDir)nasm\%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Assembling %(Identity)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)nasm\%(Filename).obj;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"C:\Program Files\NASM\nasm.exe" -f win64 %(FullPath) -o $(ProjectDir)nasm\%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Assembling %(Identity)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)nasm\%(Filename).obj;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"C:\Program Files\NASM\nasm.exe" -f win64 %(FullPath) -o $(ProjectDir)nasm\%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Assembling %(Identity)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)nasm\%(Filename).obj;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
   </ImportGroup>
 </Project>

@@ -130,7 +130,7 @@
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
       <EntryPointSymbol>kmain</EntryPointSymbol>
-      <LargeAddressAware>true</LargeAddressAware>
+      <LargeAddressAware>false</LargeAddressAware>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <AdditionalOptions>/driver %(AdditionalOptions)</AdditionalOptions>
       <EnableUAC>false</EnableUAC>
@@ -174,7 +174,7 @@
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
       <EntryPointSymbol>kmain</EntryPointSymbol>
-      <LargeAddressAware>true</LargeAddressAware>
+      <LargeAddressAware>false</LargeAddressAware>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <AdditionalOptions>/driver %(AdditionalOptions)</AdditionalOptions>
       <EnableUAC>false</EnableUAC>
@@ -216,7 +216,7 @@
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
       <EntryPointSymbol>kmain</EntryPointSymbol>
-      <LargeAddressAware>true</LargeAddressAware>
+      <LargeAddressAware>false</LargeAddressAware>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <AdditionalOptions>/driver %(AdditionalOptions)</AdditionalOptions>
       <EnableUAC>false</EnableUAC>
@@ -259,7 +259,7 @@
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
       <EntryPointSymbol>kmain</EntryPointSymbol>
-      <LargeAddressAware>true</LargeAddressAware>
+      <LargeAddressAware>false</LargeAddressAware>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
       <AdditionalOptions>/driver %(AdditionalOptions)</AdditionalOptions>
       <EnableUAC>false</EnableUAC>
@@ -276,6 +276,23 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="order.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="CPU32.asm">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Program Files\NASM\nasm.exe" -f win32 %(FullPath) -o $(ProjectDir)nasm\%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Assembling %(Identity)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)nasm\%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Program Files\NASM\nasm.exe" -f win32 %(FullPath) -o $(ProjectDir)nasm\%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Assembling %(Identity)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)nasm\%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"C:\Program Files\NASM\nasm.exe" -f win32 %(FullPath) -o $(ProjectDir)nasm\%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Assembling %(Identity)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)nasm\%(Filename).obj</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"C:\Program Files\NASM\nasm.exe" -f win32 %(FullPath) -o $(ProjectDir)nasm\%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Assembling %(Identity)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)nasm\%(Filename).obj</Outputs>
+    </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

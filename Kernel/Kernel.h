@@ -1,36 +1,5 @@
 #pragma once
 
-#pragma section(".bss")
-#define PAGE_TABLE __declspec(allocate(".bss")) volatile
-
-#define MULTIBOOT_HEADER_MAGIC 0x1BADB002
-#define CHECKSUM -(MULTIBOOT_HEADER_MAGIC + MULTIBOOT_HEADER_FLAGS)
-
-#define FLAG_AOUT_KLUDGE (1 << 16)
-#define FLAG_3 (1 << 3)
-#define FLAG_VIDEO (1 << 2)
-#define FLAG_MEMORY_INFO (1 << 1)
-#define FLAG_PAGE_ALIGN (1 << 0)
-
-#define MULTIBOOT_HEADER_FLAGS (FLAG_AOUT_KLUDGE | FLAG_MEMORY_INFO | FLAG_PAGE_ALIGN)
-
-typedef struct {
-	uint32_t Magic;
-	uint32_t Flags;
-	uint32_t Checksum;
-
-	uint32_t HeaderAddress;
-	uint32_t LoadAddress;
-	uint32_t LoadEndAddress;
-	uint32_t BssEndAddress;
-	uint32_t EntryAddress;
-
-	uint32_t ModeType;
-	uint32_t Width;
-	uint32_t Height;
-	uint32_t Depth;
-} MULTIBOOT_HEADER;
-
 typedef struct {
 	uint32_t ModStart;
 	uint32_t ModEnd;
@@ -40,7 +9,7 @@ typedef struct {
 
 typedef struct {
 	uint32_t Flags;
-	
+
 	uint32_t MemLower;
 	uint32_t MemUpper;
 
@@ -53,27 +22,11 @@ typedef struct {
 	// TODO: https://www.gnu.org/software/grub/manual/multiboot/multiboot.html#Boot-information-format
 } MULTIBOOT_INFO;
 
+
+extern uint8_t multiboot_header;
+void __cdecl enter_long();
+char* itoa_32(int num, char* str, int base);
 void kmain();
-
-#ifdef MULTIBOOT_DEFINE
-#pragma section(".text")
-__declspec(allocate(".text")) MULTIBOOT_HEADER Hdr = {
-	MULTIBOOT_HEADER_MAGIC,
-	MULTIBOOT_HEADER_FLAGS,
-	CHECKSUM,
-
-	(uint32_t)&Hdr,
-	(uint32_t)&Hdr,
-	0,
-	0,
-	(uint32_t)&kmain,
-
-	0,
-	800,
-	600,
-	32,
-};
-#endif
 
 
 #define X86_PAGE_PRESENT	(1<<0)	// set if page or page-table is present
