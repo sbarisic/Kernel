@@ -60,11 +60,10 @@ _enter_long:
 
 	mov esi, _MultibootInfo
 	mov eax, [_Kernel64Main]
-	
 	push gdt64.code
 	push eax
 
-	xchg bx, bx
+	;hang: jmp hang
 	retf
 
 section .bss
@@ -82,7 +81,7 @@ section .rdata
 gdt64:
 	dq 0
 .code: equ $ - gdt64
-	dq (1 << 44) | (1 << 47) | (1 << 41) | (1 << 43) | (1 << 53)
+	dq (1 << 44) | (1 << 47) | (1 << 41) | (1 << 53) | (1 << 43)
 
 .pointer:
 	dw $ - gdt64 - 1

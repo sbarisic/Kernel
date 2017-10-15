@@ -1,5 +1,6 @@
 section .text
 
+extern gdt_code;
 extern main
 extern Info
 
@@ -15,6 +16,7 @@ entry:
 global setup_gdt
 setup_gdt:
 	lgdt [gdt.pointer]
+	mov dword [gdt_code], gdt.code
 
 	mov ax, gdt.data
 	mov ss, ax
@@ -24,7 +26,8 @@ setup_gdt:
 	mov gs, ax
 	mov fs, ax
 
-	push 0
+	; TODO: fix
+	push qword 0
 	mov dword [rsp + 4], gdt.code
 	mov dword [rsp], setup_gdt.reload
 	retf
@@ -32,16 +35,15 @@ setup_gdt:
 	ret
 
 
-
-
 section .rdata
+align 8
 
 gdt:
 	dq 0
 .code: equ $ - gdt
-	dq (1 << 44) | (1 << 47) | (1 << 41) | (1 << 43) | (1 << 53)
+	dq (1 << 44) | (1 << 47) | (1 << 41) | (1 << 53) | (1 << 43)
 .data: equ $ - gdt
-	dq (1 << 44) | (1 << 47) | (1 << 41)
+	dq (1 << 44) | (1 << 47) | (1 << 41) | (1 << 53)
 .pointer:
 	dw $ - gdt - 1
 	dd gdt

@@ -1,9 +1,7 @@
 #include "stdafx.h"
-
-#include <stdint.h>
-#include <intrin.h>
-
-#include <string.h>
+#include "itoa_64.h"
+#include "Interrupts.h"
+#include "Console.h"
 
 typedef struct {
 	uint32_t Flags;
@@ -21,25 +19,18 @@ typedef struct {
 } MULTIBOOT_INFO;
 
 MULTIBOOT_INFO* Info;
-uint16_t* VidMem;
 
-/*void write(const char* Str) {
-	int Len = (int)strlen(Str);
-	uint16_t* VideoMem = (uint16_t *)0xb8000;
-
-	for (int i = 0; i < Len; i++)
-		VideoMem[i] = ((uint16_t)Str[i]) | 0x0F00;
-}*/
-
+void testint();
 void main() {
-	VidMem = (uint16_t*)0xb8000;
+	console_init();
+	TRACE("Long mode");
 
-	for (int i = 0; i < 80 * 25; i++)
-		VidMem[i] = 0;
+	init_interrupts();
+	TRACE("Interrupts enabled");
 
 
-	//write("LMAO NIGGA, IT WORKS");
 
+	TRACE("Done!");
 	while (1)
 		;
 }

@@ -126,7 +126,7 @@
       <GenerateMapFile>true</GenerateMapFile>
       <BaseAddress>0x1000000</BaseAddress>
       <FunctionOrder>order.txt</FunctionOrder>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
       <EntryPointSymbol>entry</EntryPointSymbol>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
@@ -182,7 +182,7 @@
       <GenerateMapFile>true</GenerateMapFile>
       <BaseAddress>0x1000000</BaseAddress>
       <FunctionOrder>order.txt</FunctionOrder>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
       <EntryPointSymbol>entry</EntryPointSymbol>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
@@ -236,7 +236,7 @@
       <GenerateMapFile>true</GenerateMapFile>
       <BaseAddress>0x1000000</BaseAddress>
       <FunctionOrder>order.txt</FunctionOrder>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
       <EntryPointSymbol>entry</EntryPointSymbol>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
@@ -291,7 +291,7 @@
       <GenerateMapFile>true</GenerateMapFile>
       <BaseAddress>0x1000000</BaseAddress>
       <FunctionOrder>order.txt</FunctionOrder>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
       <EntryPointSymbol>entry</EntryPointSymbol>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
@@ -316,9 +316,15 @@
     </CustomBuild>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Console.h" />
+    <ClInclude Include="Interrupts.h" />
+    <ClInclude Include="itoa_64.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Console.c" />
+    <ClCompile Include="Interrupts.c" />
+    <ClCompile Include="itoa_64.c" />
     <ClCompile Include="Kernel64.c" />
   </ItemGroup>
   <ItemGroup>
@@ -338,6 +344,23 @@
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)nasm\%(Filename).obj;%(Outputs)</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"C:\Program Files\NASM\nasm.exe" -f win64 %(FullPath) -o $(ProjectDir)nasm\%(Filename).obj</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Assembling %(Identity)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)nasm\%(Filename).obj;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Interrupts.asm">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"C:\Program Files\NASM\nasm.exe" -f win64 %(FullPath) -o $(ProjectDir)nasm\%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"C:\Program Files\NASM\nasm.exe" -f win64 %(FullPath) -o $(ProjectDir)nasm\%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"C:\Program Files\NASM\nasm.exe" -f win64 %(FullPath) -o $(ProjectDir)nasm\%(Filename).obj</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"C:\Program Files\NASM\nasm.exe" -f win64 %(FullPath) -o $(ProjectDir)nasm\%(Filename).obj</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Assembling %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Assembling %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Assembling %(Identity)</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Assembling %(Identity)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectDir)nasm\%(Filename).obj;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectDir)nasm\%(Filename).obj;%(Outputs)</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectDir)nasm\%(Filename).obj;%(Outputs)</Outputs>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectDir)nasm\%(Filename).obj;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>

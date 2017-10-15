@@ -127,14 +127,14 @@
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <BaseAddress>0x100000</BaseAddress>
       <FunctionOrder>order.txt</FunctionOrder>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
       <EntryPointSymbol>kmain</EntryPointSymbol>
       <LargeAddressAware>false</LargeAddressAware>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-      <AdditionalOptions>/driver %(AdditionalOptions)</AdditionalOptions>
       <EnableUAC>false</EnableUAC>
       <SectionAlignment>1024</SectionAlignment>
+      <Driver>Driver</Driver>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -171,14 +171,14 @@
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <BaseAddress>0x100000</BaseAddress>
       <FunctionOrder>order.txt</FunctionOrder>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
       <EntryPointSymbol>kmain</EntryPointSymbol>
       <LargeAddressAware>false</LargeAddressAware>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-      <AdditionalOptions>/driver %(AdditionalOptions)</AdditionalOptions>
       <EnableUAC>false</EnableUAC>
       <SectionAlignment>1024</SectionAlignment>
+      <Driver>Driver</Driver>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -213,14 +213,14 @@
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <BaseAddress>0x100000</BaseAddress>
       <FunctionOrder>order.txt</FunctionOrder>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
       <EntryPointSymbol>kmain</EntryPointSymbol>
       <LargeAddressAware>false</LargeAddressAware>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-      <AdditionalOptions>/driver %(AdditionalOptions)</AdditionalOptions>
       <EnableUAC>false</EnableUAC>
       <SectionAlignment>1024</SectionAlignment>
+      <Driver>Driver</Driver>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -256,14 +256,14 @@
       <RandomizedBaseAddress>true</RandomizedBaseAddress>
       <BaseAddress>0x100000</BaseAddress>
       <FunctionOrder>order.txt</FunctionOrder>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
       <NoEntryPoint>false</NoEntryPoint>
       <EntryPointSymbol>kmain</EntryPointSymbol>
       <LargeAddressAware>false</LargeAddressAware>
       <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
-      <AdditionalOptions>/driver %(AdditionalOptions)</AdditionalOptions>
       <EnableUAC>false</EnableUAC>
       <SectionAlignment>1024</SectionAlignment>
+      <Driver>Driver</Driver>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
