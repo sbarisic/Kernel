@@ -3,7 +3,7 @@
 #include "Interrupts.h"
 #include "Console.h"
 
-typedef struct {
+typedef	struct {
 	uint32_t Flags;
 
 	uint32_t MemLower;
@@ -18,17 +18,20 @@ typedef struct {
 	// TODO: https://www.gnu.org/software/grub/manual/multiboot/multiboot.html#Boot-information-format
 } MULTIBOOT_INFO;
 
-MULTIBOOT_INFO* Info;
+struct {
+	int32_t ConX;
+	int32_t ConY;
+	int32_t Multiboot;
+} *Data;
 
-void testint();
 void main() {
-	console_init();
+	console_init(Data->ConX, Data->ConY);
 	TRACE("Long mode");
 
 	init_interrupts();
 	TRACE("Interrupts enabled");
 
-
+	//__writecr0(__readcr0() & ~(0x80000001));
 
 	TRACE("Done!");
 	while (1)

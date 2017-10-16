@@ -22,7 +22,6 @@ typedef struct {
 	// TODO: https://www.gnu.org/software/grub/manual/multiboot/multiboot.html#Boot-information-format
 } MULTIBOOT_INFO;
 
-
 extern uint8_t multiboot_header;
 void __cdecl enter_long();
 char* itoa_32(int num, char* str, int base);
@@ -51,3 +50,27 @@ void kmain();
 #define X86_PAGE_AVAIL3	(1<<11) // Available for usage by the Kernel
 
 #define PAGE_SIZE 4096
+
+typedef struct {
+	uint32_t Sig;
+	uint32_t Entry;
+	uint8_t Revision;
+	uint8_t Length;
+	uint8_t Checksum;
+} BIOS32;
+
+typedef struct {
+	//uint8_t Sig;
+	uint32_t Sig;
+
+	uint16_t EntryPoint;
+	uint16_t PMInit;
+	uint16_t BIOSDataSel;
+	uint16_t A0000Sel;
+	uint16_t B0000Sel;
+	uint16_t CodeSegSel;
+	uint8_t InProtectedMode;
+	uint8_t Checksum;
+} PMInfoBlock;
+
+uint8_t vbe_start;

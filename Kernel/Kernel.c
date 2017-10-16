@@ -4,6 +4,28 @@
 
 #include "Kernel.h"
 
+const char* ServiceNames[] = {
+	"$PnP",
+	"$PCI",
+	"$PIR",
+	"$PMM",
+	"$BC$",
+	"$ACF",
+	"$BLK",
+	"$WDS",
+	"$SNY",
+	"$SDS",
+	"$SDM",
+	"$IRT",
+	"$CFD",
+	"$BBS",
+	"$ASF",
+	"$$CT",
+	"MPNT",
+	"PCI "
+};
+
+PMInfoBlock* PMInfo;
 MULTIBOOT_INFO* MultibootInfo;
 uint64_t* PT4; // 512 GiB pages
 uint64_t* PT3; // 1 GiB pages
@@ -128,6 +150,46 @@ uint64_t align(uint64_t Num, uint64_t RoundNum) {
 	return (Num + RoundNum - 1) & ~(RoundNum - 1);
 }
 
+int check_bios32(BIOS32* B32, const char* Serv) {
+	uint32_t Entry = B32->Entry;
+	uint8_t Exists = 0;
+	uint32_t Name = Serv[0] | (Serv[1] << 8) | (Serv[2] << 16) | (Serv[3] << 24);
+
+	__asm {
+		mov bl, 0
+		mov eax, Name
+		mov ebx, 0
+
+		push cs
+		push retloc
+		push cs
+		push Entry
+		retf
+		retloc :
+		mov Exists, al
+			mov al, 0
+	}
+
+	return Exists == 0;
+}
+
+PMInfoBlock* find_vbe_info(uint32_t Offset) {
+	for (int i = 0; i < (1 << 16); i++) {
+		PMInfoBlock* Block = (PMInfoBlock*)(Offset + i);
+
+		if (Block->Sig == 'PMID' || Block->Sig == 'DIMP')
+			return Block;
+	}
+
+	return NULL;
+}
+
+struct {
+	int32_t ConX;
+	int32_t ConY;
+	MULTIBOOT_INFO* Multiboot;
+} Data = { 0 };
+
 void kmain() {
 	VidMem = (uint16_t*)0xb8000;
 
@@ -153,6 +215,22 @@ void kmain() {
 	writenum((uint32_t)&multiboot_header);
 	writeln("");
 
+	write("[kmain] Searching for VBE 3 Info block");
+
+	PMInfo = find_vbe_info(0xC0000);
+	if (PMInfo == NULL) {
+		PMInfo = find_vbe_info(0xC000);
+		
+		if (PMInfo == NULL)	{
+			PMInfo = find_vbe_info(0x0);
+		}
+	}
+
+	if (PMInfo == NULL)
+		writeln(" ... FAIL");
+	else
+		writeln(" ... OKAY");
+
 	temp_paging_init();
 	writeln("[kmain] Temporary paging, 128 MiB identity mapped");
 
@@ -163,6 +241,28 @@ void kmain() {
 	writenum((uint32_t)Kernel64Main);
 	writeln("");
 
-	//BREAK;
+	write("[kmain] Searching for BIOS32");
+	uint8_t* Start = (uint8_t*)0xE0000;
+	for (; Start <= (uint8_t*)0xFFFF0; Start += 16) {
+		BIOS32* B32;
+
+		if ((B32 = (BIOS32*)Start)->Sig == '_23_') {
+			writeln(" ... OKAY");
+			writeln("[kmain] Scanning BIOS32 services");
+
+			for (int i = 0; i < (sizeof(ServiceNames) / sizeof(*ServiceNames)); i++) {
+				if (check_bios32(B32, ServiceNames[i])) {
+					write(ServiceNames[i]);
+					write(" ");
+				}
+			}
+			break;
+		}
+	}
+	writeln("");
+
+	Data.ConX = X;
+	Data.ConY = Y;
+	Data.Multiboot = MultibootInfo;
 	enter_long();
 }

@@ -14,6 +14,7 @@ extern _Kernel64Main
 extern _write
 extern _kmain
 extern _MultibootInfo
+extern _Data
 extern _PT4
 extern _PT3
 extern _PT2
@@ -53,18 +54,25 @@ entry:
 	cli
 .hang:
 	hlt
-	jmp entry.hang
+	jmp .hang
 	
 _enter_long:
 	lgdt [gdt64.pointer]
 
-	mov esi, _MultibootInfo
+	mov esi, _Data
 	mov eax, [_Kernel64Main]
 	push gdt64.code
 	push eax
 
 	;hang: jmp hang
 	retf
+
+section .vbe
+global _vbe_start
+_vbe_start:
+	resb (1 << 15)
+
+
 
 section .bss
 align 4

@@ -42,12 +42,12 @@ void console_writehex(int32_t Num) {
 	console_write(buf);
 }
 
-void console_init() {
-	ConX = 0;
-	ConY = 0;
+void console_init(int32_t X, int32_t Y) {
+	ConX = X;
+	ConY = Y;
 	ConW = 80;
 	ConH = 25;
 
-	for (int i = 0; i < ConW * ConH; i++)
-		console_put_legacy(i, ' ');
+	/*for (int i = 0; i < ConW * ConH; i++)
+		console_put_legacy(i, ' ');*/
 }

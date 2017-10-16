@@ -1,13 +1,13 @@
 section .text
 
-extern gdt_code;
+extern gdt_code
+extern Data
 extern main
-extern Info
 
 global entry
 entry:
 	mov esp, stack.top
-	mov [Info], esi
+	mov [Data], esi
 
 	call setup_gdt
 	call main
@@ -27,10 +27,10 @@ setup_gdt:
 	mov fs, ax
 
 	; TODO: fix
-	push qword 0
-	mov dword [rsp + 4], gdt.code
-	mov dword [rsp], setup_gdt.reload
-	retf
+;	push qword 0
+;	mov dword [rsp + 4], gdt.code
+;	mov dword [rsp], setup_gdt.reload
+;	retf
 .reload:
 	ret
 
