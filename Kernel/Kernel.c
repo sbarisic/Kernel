@@ -39,8 +39,15 @@ uint16_t*  VidMem;
 int X;
 int Y;
 
-uint32_t Kernel64Loc;
 uint32_t Kernel64Main;
+
+struct {
+	int32_t ConX;
+	int32_t ConY;
+	MULTIBOOT_INFO* Multiboot;
+	uint64_t K64Start;
+	uint64_t K64Len;
+} Data = { 0 };
 
 //uint32_t* PageTable;
 //uint32_t* PageDirectory;
@@ -96,6 +103,7 @@ void temp_paging_init() {
 	uint64_t Sz = 0x200000;
 
 	// Identity map first 32 MiB using 2 MiB pages
+	// PT2 -> Mem, PT2 -> PT1 -> Mem
 	for (int i = 0; i < 64; i++) {
 		PT2[i] = Addr | X86_PAGE_PRESENT | X86_PAGE_WRITE | X86_PAGE_PAGESIZE;
 		Addr += Sz;
@@ -109,7 +117,7 @@ void temp_paging_init() {
 	const unsigned int MSR = 0xC0000080;
 	__writemsr(MSR, __readmsr(MSR) | (1UL << 8)); // Enable long mode
 
-	__writecr0(__readcr0() | (1UL << 31)); // Enable Paging
+	__writecr0(__readcr0() | (1UL << 31) | (1UL << 16)); // Enable Paging
 }
 
 void writenum(int b) {
@@ -126,6 +134,7 @@ void load_kernel64() {
 				uint32_t Start = MultibootInfo->ModsAddr[i].ModStart;
 				uint32_t End = MultibootInfo->ModsAddr[i].ModEnd;
 				uint32_t Len = End - Start;
+				Data.K64Len = (uint64_t)Len;
 
 				IMAGE_DOS_HEADER* DosHeader = (IMAGE_DOS_HEADER*)Start;
 				if (DosHeader->e_magic == IMAGE_DOS_SIGNATURE) {
@@ -133,10 +142,10 @@ void load_kernel64() {
 					PIMAGE_NT_HEADERS NTHeader = (PIMAGE_NT_HEADERS)(Start + DosHeader->e_lfanew);
 					if (NTHeader->Signature == IMAGE_NT_SIGNATURE) {
 
-						Kernel64Loc = (uint32_t)NTHeader->OptionalHeader.ImageBase;
-						memcpy((void*)Kernel64Loc, (void*)Start, Len);
+						Data.K64Start = (uint64_t)NTHeader->OptionalHeader.ImageBase;
+						memcpy((void*)Data.K64Start, (void*)Start, Len);
 
-						Kernel64Main = (uint32_t)(Kernel64Loc + (uint32_t)NTHeader->OptionalHeader.AddressOfEntryPoint);
+						Kernel64Main = (uint32_t)(Data.K64Start + (uint32_t)NTHeader->OptionalHeader.AddressOfEntryPoint);
 					}
 				}
 			}
@@ -185,12 +194,6 @@ PMInfoBlock* find_vbe_info(uint32_t Offset) {
 
 	return NULL;
 }
-
-struct {
-	int32_t ConX;
-	int32_t ConY;
-	MULTIBOOT_INFO* Multiboot;
-} Data = { 0 };
 
 void kmain() {
 	VidMem = (uint16_t*)0xb8000;
@@ -261,7 +264,7 @@ void kmain() {
 
 	load_kernel64();
 	write("[kmain] Loaded Kernel64 to 0x");
-	writenum(Kernel64Loc);
+	writenum((int32_t)Data.K64Start);
 	write(", entry point at 0x");
 	writenum((uint32_t)Kernel64Main);
 	writeln("");

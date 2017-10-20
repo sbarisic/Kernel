@@ -5,12 +5,14 @@
 
 #include <string.h>
 
+#define HAS_FLAG(n, f) (((n) & (f)) != 0)
+
 #define MiB 0x100000
 #define KiB 0x400
 
 int gdt_code;
 
-typedef uint64_t BOOL;
+typedef uint32_t BOOL;
 #define TRUE (1 == 1)
 #define FALSE (1 != 1)
 
@@ -25,3 +27,5 @@ typedef struct {
 	uint32_t Len;
 	uint32_t Addr;
 } MULTIBOOT_INFO_MMAP;
+
+extern void BREAKPOINT();

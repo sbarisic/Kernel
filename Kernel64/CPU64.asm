@@ -4,6 +4,11 @@ extern gdt_code
 extern Data
 extern main
 
+global BREAKPOINT
+BREAKPOINT:
+	xchg bx, bx
+	ret
+
 global entry
 entry:
 	mov esp, stack.top

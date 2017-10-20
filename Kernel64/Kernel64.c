@@ -23,6 +23,8 @@ struct {
 	int32_t ConX;
 	int32_t ConY;
 	int32_t Multiboot;
+	uint64_t K64Start;
+	uint64_t K64Len;
 } *Data;
 
 void main() {
@@ -33,13 +35,22 @@ void main() {
 	TRACELN("Long mode");
 
 	init_interrupts();
-	memory_init(MMapInfo);
 
-	/*TRACE("Free memory ");
-	console_writedec((int32_t)(FreeMem / 1048576));
-	console_write(" MB\n");*/
+	MapQeueue Q[2];
+	// Kernel region
+	Q[0].Start = Data->K64Start;
+	Q[0].Len = Data->K64Len;
+	Q[0].Type = MEM_FRAME_2MiB;
 
-	//__writecr0(__readcr0() & ~(0x80000001));
+	// 0 -> 2 MiB
+	Q[1].Start = 0;
+	Q[1].Len = 2 * MiB;
+	Q[1].Type = MEM_FRAME_2MiB;
+
+	memory_init(MMapInfo, Q, sizeof(Q) / sizeof(MapQeueue));
+	
+	int* I = (int*)(20 * MiB);
+	*I = 123;
 
 	TRACELN("Done!");
 	while (1)

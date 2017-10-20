@@ -316,6 +316,7 @@
     </CustomBuild>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="bitmap.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="Interrupts.h" />
     <ClInclude Include="itoa_64.h" />
@@ -323,6 +324,7 @@
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bitmap.c" />
     <ClCompile Include="Console.c" />
     <ClCompile Include="Interrupts.c" />
     <ClCompile Include="itoa_64.c" />

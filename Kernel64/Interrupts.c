@@ -168,18 +168,33 @@ void init_interrupts() {
 	TRACELN("Interrupts enabled");
 }
 
+void crash_and_burn(const char* Msg) {
+	_disable();
+	console_write("[ABORT] ");
+	console_write(Msg);
+	while (TRUE)
+		;
+}
+
+BOOL handle_page_fault(uint64_t Address, uint32_t Error) {
+	console_writehex(Address);
+	console_write("\n");
+	crash_and_burn("Page fault");
+	return FALSE;
+}
+
 void int_handler2(int32_t Error, int32_t IntNum) {
+	if (IntNum == 0x0E && handle_page_fault(__readcr2(), Error))
+		return;
+
 	if (IntNum < 16) {
 		console_write("[EXCEPTION ");
 		console_writehex(IntNum);
 		console_write("] ");
-		console_write(Exceptions[IntNum]);
-		console_write(" ");
 		console_writehex(Error);
 		console_write("\n");
 
-		while (1)
-			;
+		crash_and_burn(Exceptions[IntNum]);
 	}
 
 	console_write("[INTERRUPT ");
