@@ -319,6 +319,7 @@
     <ClInclude Include="Console.h" />
     <ClInclude Include="Interrupts.h" />
     <ClInclude Include="itoa_64.h" />
+    <ClInclude Include="Memory.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
@@ -326,6 +327,7 @@
     <ClCompile Include="Interrupts.c" />
     <ClCompile Include="itoa_64.c" />
     <ClCompile Include="Kernel64.c" />
+    <ClCompile Include="Memory.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="order.txt" />

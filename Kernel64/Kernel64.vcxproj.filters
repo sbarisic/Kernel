@@ -33,6 +33,9 @@
     <ClInclude Include="itoa_64.h">
       <Filter>Header Files\lib</Filter>
     </ClInclude>
+    <ClInclude Include="Memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="order.txt" />
@@ -50,15 +53,16 @@
     <ClCompile Include="itoa_64.c">
       <Filter>Source Files\lib</Filter>
     </ClCompile>
+    <ClCompile Include="Memory.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="CPU64.asm">
       <Filter>Source Files</Filter>
     </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <MASM Include="Interrupts.asm">
+    <CustomBuild Include="Interrupts.asm">
       <Filter>Source Files</Filter>
-    </MASM>
+    </CustomBuild>
   </ItemGroup>
 </Project>

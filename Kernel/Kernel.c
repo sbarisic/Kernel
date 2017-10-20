@@ -26,6 +26,8 @@ const char* ServiceNames[] = {
 };
 
 PMInfoBlock* PMInfo;
+BIOS32* B32;
+
 MULTIBOOT_INFO* MultibootInfo;
 uint64_t* PT4; // 512 GiB pages
 uint64_t* PT3; // 1 GiB pages
@@ -211,6 +213,29 @@ void kmain() {
 	Y = 0;
 
 	cls();
+
+	//char CPUName[0x40] = { 0 };
+	char CPUName[0x40];
+
+	int CPUInfo[4] = { -1 };
+	__cpuid(CPUInfo, 0x80000000);
+	uint32_t NexIDs = CPUInfo[0];
+
+	for (uint32_t i = 0x80000000; i <= NexIDs; ++i) {
+		__cpuid(CPUInfo, i);
+		if (i == 0x80000002)
+			memcpy(CPUName, CPUInfo, sizeof(CPUInfo));
+		else if (i == 0x80000003)
+			memcpy(CPUName + 16, CPUInfo, sizeof(CPUInfo));
+		else if (i == 0x80000004)
+			memcpy(CPUName + 32, CPUInfo, sizeof(CPUInfo));
+	}
+
+	int SpaceIdx = 0;
+	while (CPUName[SpaceIdx] == ' ')
+		SpaceIdx++;
+	writeln(CPUName);
+
 	write("[kmain] Protected mode, base at 0x");
 	writenum((uint32_t)&multiboot_header);
 	writeln("");
@@ -220,8 +245,8 @@ void kmain() {
 	PMInfo = find_vbe_info(0xC0000);
 	if (PMInfo == NULL) {
 		PMInfo = find_vbe_info(0xC000);
-		
-		if (PMInfo == NULL)	{
+
+		if (PMInfo == NULL) {
 			PMInfo = find_vbe_info(0x0);
 		}
 	}
@@ -242,9 +267,10 @@ void kmain() {
 	writeln("");
 
 	write("[kmain] Searching for BIOS32");
+
 	uint8_t* Start = (uint8_t*)0xE0000;
 	for (; Start <= (uint8_t*)0xFFFF0; Start += 16) {
-		BIOS32* B32;
+		B32 = NULL;
 
 		if ((B32 = (BIOS32*)Start)->Sig == '_23_') {
 			writeln(" ... OKAY");
@@ -258,8 +284,14 @@ void kmain() {
 			}
 			break;
 		}
+		else
+			B32 = NULL;
 	}
+
+	if (B32 == NULL)
+		write("... FAIL");
 	writeln("");
+
 
 	Data.ConX = X;
 	Data.ConY = Y;

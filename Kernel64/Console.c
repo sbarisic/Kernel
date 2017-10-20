@@ -10,21 +10,32 @@ int ConH;
 int ConX;
 int ConY;
 
-inline void console_put_legacy(int Idx, char C) {
-	if (C != '\n') {
-		uint16_t* VidMem = (uint16_t*)0xb8000;
-		VidMem[Idx] = ((uint16_t)C) | 0x0F00;
-	}
-}
+uint16_t* VidMem = (uint16_t*)0xb8000;
 
 void console_put(char C) {
 	__outbyte(0xE9, (unsigned char)C);
-	console_put_legacy(ConY * ConW + ConX, C);
+
+	// Put
+	int Idx = ConY * ConW + ConX;
+	if (C != '\n')
+		VidMem[Idx] = ((uint16_t)C) | 0x0F00;
 
 	ConX++;
 	if (ConX >= ConW || C == '\n') {
 		ConX = 0;
 		ConY++;
+	}
+
+	// Scroll
+	if (ConY >= ConH) {
+		ConY = ConH - 1;
+
+		for (int y = 1; y < ConH; y++) {
+			for (int x = 0; x < ConW; x++) {
+				VidMem[(y - 1) * ConW + x] = VidMem[y * ConW + x];
+				VidMem[y * ConW + x] = 0;
+			}
+		}
 	}
 }
 
@@ -39,6 +50,12 @@ void console_writehex(int32_t Num) {
 	char buf[1024] = { 0 };
 	itoa_64(Num, buf, 16);
 	console_write("0x");
+	console_write(buf);
+}
+
+void console_writedec(int32_t Num) {
+	char buf[1024] = { 0 };
+	itoa_64(Num, buf, 10);
 	console_write(buf);
 }
 

@@ -2,6 +2,7 @@
 #include "itoa_64.h"
 #include "Interrupts.h"
 #include "Console.h"
+#include "Memory.h"
 
 typedef	struct {
 	uint32_t Flags;
@@ -25,15 +26,22 @@ struct {
 } *Data;
 
 void main() {
+	MULTIBOOT_INFO* Info = (MULTIBOOT_INFO*)(int64_t)Data->Multiboot;
+	MULTIBOOT_INFO_MMAP* MMapInfo = (MULTIBOOT_INFO_MMAP*)(int64_t)(Data->Multiboot + 44);
+
 	console_init(Data->ConX, Data->ConY);
-	TRACE("Long mode");
+	TRACELN("Long mode");
 
 	init_interrupts();
-	TRACE("Interrupts enabled");
+	memory_init(MMapInfo);
+
+	/*TRACE("Free memory ");
+	console_writedec((int32_t)(FreeMem / 1048576));
+	console_write(" MB\n");*/
 
 	//__writecr0(__readcr0() & ~(0x80000001));
 
-	TRACE("Done!");
+	TRACELN("Done!");
 	while (1)
 		;
 }

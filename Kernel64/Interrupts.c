@@ -164,6 +164,8 @@ void init_interrupts() {
 
 	__lidt(&InterruptTablePtr);
 	_enable();
+
+	TRACELN("Interrupts enabled");
 }
 
 void int_handler2(int32_t Error, int32_t IntNum) {
