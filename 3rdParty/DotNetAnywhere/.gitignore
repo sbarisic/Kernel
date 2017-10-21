@@ -1,0 +1,17 @@
+bin
+obj
+Debug
+Release
+Builds
+*.ncb
+*.suo
+*.user
+*.pidb
+*.userprefs
+*.xml
+*.nupkg
+*.svn
+*.opensdf
+*.sdf
+*.vcxproj
+*.vcxproj.filters

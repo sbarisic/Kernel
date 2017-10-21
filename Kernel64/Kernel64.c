@@ -4,6 +4,8 @@
 #include "Console.h"
 #include "Memory.h"
 
+//#include <stdio.h>
+
 typedef	struct {
 	uint32_t Flags;
 
@@ -36,7 +38,7 @@ void main() {
 
 	init_interrupts();
 
-	MapQeueue Q[2];
+	MapQueue Q[2];
 	// Kernel region
 	Q[0].Start = Data->K64Start;
 	Q[0].Len = Data->K64Len;
@@ -47,10 +49,14 @@ void main() {
 	Q[1].Len = 2 * MiB;
 	Q[1].Type = MEM_FRAME_2MiB;
 
-	memory_init(MMapInfo, Q, sizeof(Q) / sizeof(MapQeueue));
+	memory_init(MMapInfo, Q, sizeof(Q) / sizeof(MapQueue));
 	
-	int* I = (int*)(20 * MiB);
-	*I = 123;
+	//int* I = (int*)(20 * MiB);
+	//*I = 123;
+
+	char Buf[1024];
+	sprintf(Buf, "Hello sprintf World! It works! %i\n", 42);
+	console_write(Buf);
 
 	TRACELN("Done!");
 	while (1)

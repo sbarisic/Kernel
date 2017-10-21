@@ -76,24 +76,32 @@
     <OutDir>$(SolutionDir)bin\</OutDir>
     <IgnoreImportLibrary />
     <GenerateManifest>false</GenerateManifest>
+    <LibraryPath>$(SolutionDir)bin_shared\;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\Projects2017\Kernel\3rdParty\PDCLib\platform\kernel\internals;E:\Projects2017\Kernel\3rdParty\PDCLib\internals;E:\Projects2017\Kernel\3rdParty\PDCLib\includes</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\</OutDir>
     <IgnoreImportLibrary />
     <GenerateManifest>false</GenerateManifest>
+    <LibraryPath>$(SolutionDir)bin_shared\;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\Projects2017\Kernel\3rdParty\PDCLib\platform\kernel\internals;E:\Projects2017\Kernel\3rdParty\PDCLib\internals;E:\Projects2017\Kernel\3rdParty\PDCLib\includes</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\</OutDir>
     <IgnoreImportLibrary />
     <GenerateManifest>false</GenerateManifest>
+    <LibraryPath>$(SolutionDir)bin_shared\;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\Projects2017\Kernel\3rdParty\PDCLib\platform\kernel\internals;E:\Projects2017\Kernel\3rdParty\PDCLib\internals;E:\Projects2017\Kernel\3rdParty\PDCLib\includes</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\</OutDir>
     <IgnoreImportLibrary />
     <GenerateManifest>false</GenerateManifest>
+    <LibraryPath>$(SolutionDir)bin_shared\;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\Projects2017\Kernel\3rdParty\PDCLib\platform\kernel\internals;E:\Projects2017\Kernel\3rdParty\PDCLib\internals;E:\Projects2017\Kernel\3rdParty\PDCLib\includes</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -101,7 +109,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);__STDC__=1</PreprocessorDefinitions>
       <AdditionalOptions>/kernel %(AdditionalOptions)</AdditionalOptions>
       <StructMemberAlignment>1Byte</StructMemberAlignment>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -136,6 +144,7 @@
       <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <FixedBaseAddress>true</FixedBaseAddress>
+      <AdditionalDependencies>pdclib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuild>
       <Command>
@@ -156,7 +165,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);__STDC__=1</PreprocessorDefinitions>
       <AdditionalOptions>/kernel %(AdditionalOptions)</AdditionalOptions>
       <StructMemberAlignment>1Byte</StructMemberAlignment>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -192,6 +201,7 @@
       <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <FixedBaseAddress>true</FixedBaseAddress>
+      <AdditionalDependencies>pdclib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuild>
       <Command>
@@ -214,7 +224,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);__STDC__=1</PreprocessorDefinitions>
       <AdditionalOptions>/kernel %(AdditionalOptions)</AdditionalOptions>
       <StructMemberAlignment>1Byte</StructMemberAlignment>
       <BufferSecurityCheck>false</BufferSecurityCheck>
@@ -246,6 +256,7 @@
       <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <FixedBaseAddress>true</FixedBaseAddress>
+      <AdditionalDependencies>pdclib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuild>
       <Command>
@@ -268,7 +279,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);__STDC__=1</PreprocessorDefinitions>
       <AdditionalOptions>/kernel %(AdditionalOptions)</AdditionalOptions>
       <StructMemberAlignment>1Byte</StructMemberAlignment>
       <BufferSecurityCheck>false</BufferSecurityCheck>
@@ -301,6 +312,7 @@
       <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <FixedBaseAddress>true</FixedBaseAddress>
+      <AdditionalDependencies>pdclib.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CustomBuild>
       <Command>

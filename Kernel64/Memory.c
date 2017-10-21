@@ -157,7 +157,7 @@ BOOL memory_imap_frames(uint64_t* PT4Ptr, uint64_t Address, uint8_t Type, uint64
 	return memory_map_frames(PT4Ptr, Address, Address, Type, Count, Flags);
 }
 
-void memory_paging_init(MapQeueue* Queue, uint64_t Count) {
+void memory_paging_init(MapQueue* Queue, uint64_t Count) {
 	for (uint64_t i = 0; i < Count; i++) {
 		uint64_t PageSize = 4 * KiB;
 		if (Queue[i].Type == MEM_FRAME_2MiB)
@@ -231,7 +231,7 @@ void memory_add(uint64_t Base, uint64_t Len, uint32_t Type) {
 	console_write("\n");
 }
 
-void memory_init(MULTIBOOT_INFO_MMAP* MMapInfo, MapQeueue* Queue, uint64_t Count) {
+void memory_init(MULTIBOOT_INFO_MMAP* MMapInfo, MapQueue* Queue, uint64_t Count) {
 	TotalMemory = 0;
 	FreeStart = 0;
 	Free = 0;

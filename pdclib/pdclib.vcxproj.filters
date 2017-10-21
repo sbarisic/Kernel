@@ -1,0 +1,902 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\internals">
+      <UniqueIdentifier>{1aa4ce61-63af-401e-9f16-fc824ecf1a4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\includes">
+      <UniqueIdentifier>{bc150ea5-a4f4-4fba-a5b8-4cba8d7b1860}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\platform">
+      <UniqueIdentifier>{e09ef391-0f91-4c81-b588-771158cc4ac1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\platform\kernel">
+      <UniqueIdentifier>{99a2661b-ea66-496e-9ffb-e18928d8ae39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\platform\kernel\includes">
+      <UniqueIdentifier>{01c7a1e0-fee3-4311-9272-7ba14834fd80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\platform\kernel\internals">
+      <UniqueIdentifier>{559c1740-a97a-4921-830d-688073506159}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions">
+      <UniqueIdentifier>{ae8ae0c4-31ad-4805-b619-79b4b2984d5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\_dlmalloc">
+      <UniqueIdentifier>{9e6a6154-6b1c-4598-9ba3-98c3ca091c88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\_PDCLIB">
+      <UniqueIdentifier>{7211f0d4-d5c7-41c5-aa1b-03a410f1ec96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\ctype">
+      <UniqueIdentifier>{4f9b6eec-ef81-4d9c-8ce8-4fea0d747040}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\errno">
+      <UniqueIdentifier>{c48b7474-8dc1-410b-a531-e8f0944aacfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\inttypes">
+      <UniqueIdentifier>{7794803e-0f4d-43b3-8c01-4e41e2955aa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\locale">
+      <UniqueIdentifier>{3dc252c6-9760-4c42-a150-fd52eed274ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\wctype">
+      <UniqueIdentifier>{3140769d-510b-4485-82bd-5427fe22dfbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\wchar">
+      <UniqueIdentifier>{70eea834-637a-4f46-bf3d-ae9a55d4ee72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\uchar">
+      <UniqueIdentifier>{c5f63f46-3e7f-44e1-8326-ca4b6400778c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\time">
+      <UniqueIdentifier>{f108d4f6-2dae-4adb-a186-39d885133899}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\string">
+      <UniqueIdentifier>{41c1dfd6-75fc-4a31-88dc-64688a37f54a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\stdlib">
+      <UniqueIdentifier>{8a4ba213-de6e-4db2-869b-064eec7eef52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\stdio">
+      <UniqueIdentifier>{6f33e0c1-6d61-4643-9498-814d3a4d195b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\signal">
+      <UniqueIdentifier>{0a0bebaf-1400-4ea9-9f1f-2d9030fe563d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\platform">
+      <UniqueIdentifier>{d338d10c-9699-43ab-8f0d-2e7dbbc09f20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\platform\kernel">
+      <UniqueIdentifier>{ef434b62-fafa-4d68-8af1-f9886472b9ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\platform\kernel\functions">
+      <UniqueIdentifier>{ec38b73d-6cdc-4fd1-a065-8a2449b8a87e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\platform\kernel\functions">
+      <UniqueIdentifier>{fa94bac1-74b5-4610-bceb-b1eadff6b483}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\functions">
+      <UniqueIdentifier>{67b62f2f-1faf-4b74-be13-f653c8df5ec2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\platform\kernel\functions\_PDCLIB">
+      <UniqueIdentifier>{dd8d406a-66fb-4bd1-97ce-3d875418edb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\platform\kernel\functions\stdio">
+      <UniqueIdentifier>{abb6ce61-2d2b-44c6-ada8-d1a3153b0409}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\platform\kernel\functions\stdlib">
+      <UniqueIdentifier>{36168af1-d71b-4b66-851d-9952702cb6fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\platform\kernel\functions\pthreads">
+      <UniqueIdentifier>{408db2c4-7195-4866-a760-1a7467dcd0dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\functions\_dlmalloc">
+      <UniqueIdentifier>{75152e7f-ac1d-480b-a4d1-5407642e0b96}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_allocpages.c">
+      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_Exit.c">
+      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_fileops.c">
+      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_freepages.c">
+      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_open.c">
+      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_rename.c">
+      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_stdinit.c">
+      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\stdlib\getenv.c">
+      <Filter>Source Files\platform\kernel\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\stdlib\system.c">
+      <Filter>Source Files\platform\kernel\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\stdio\remove.c">
+      <Filter>Source Files\platform\kernel\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\stdio\tmpfile.c">
+      <Filter>Source Files\platform\kernel\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\call_once.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\cnd_init.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\cnd_signal.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\cnd_wait.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\mtx_destroy.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\mtx_init.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\mtx_lock.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\mtx_timedlock.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\mtx_trylock.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\mtx_unlock.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\thrd_yield.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\tss_create.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\tss_delete.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\tss_get.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\pthreads\tss_set.c">
+      <Filter>Source Files\platform\kernel\functions\pthreads</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\memchr.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\memcmp.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\memcpy.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\memmove.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\memset.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strcat.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strchr.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strcmp.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strcoll.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strcpy.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strcspn.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strdup.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strerror.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strlcat.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strlcpy.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strlen.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strncat.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strncmp.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strncpy.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strndup.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strnlen.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strpbrk.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strrchr.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strspn.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strstr.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strtok.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\string\strxfrm.c">
+      <Filter>Source Files\functions\string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\isalnum.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\isalpha.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\isblank.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\iscntrl.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\isdigit.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\isgraph.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\islower.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\isprint.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\ispunct.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\isspace.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\isupper.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\isxdigit.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\tolower.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\ctype\toupper.c">
+      <Filter>Source Files\functions\ctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\errno\errno.c">
+      <Filter>Source Files\functions\errno</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\inttypes\imaxabs.c">
+      <Filter>Source Files\functions\inttypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\inttypes\imaxdiv.c">
+      <Filter>Source Files\functions\inttypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\inttypes\strtoimax.c">
+      <Filter>Source Files\functions\inttypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\inttypes\strtoumax.c">
+      <Filter>Source Files\functions\inttypes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\locale\_PDCLIB_mb_cur_max.c">
+      <Filter>Source Files\functions\locale</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\locale\_PDCLIB_unicodedata.c">
+      <Filter>Source Files\functions\locale</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\locale\freelocale.c">
+      <Filter>Source Files\functions\locale</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\locale\localeconv.c">
+      <Filter>Source Files\functions\locale</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\locale\setlocale.c">
+      <Filter>Source Files\functions\locale</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\locale\uselocale.c">
+      <Filter>Source Files\functions\locale</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\signal\raise.c">
+      <Filter>Source Files\functions\signal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\signal\signal.c">
+      <Filter>Source Files\functions\signal</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\_cbprintf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\_PDCLIB_filemode.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\_PDCLIB_fillbuffer.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\_PDCLIB_flushbuffer.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\_PDCLIB_ftell64.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\_PDCLIB_fvopen.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\_PDCLIB_prepread.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\_PDCLIB_prepwrite.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\_PDCLIB_print.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\_PDCLIB_scan.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\_PDCLIB_seek.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\_vcbprintf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\clearerr.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fclose.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\feof.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\ferror.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fflush.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fgetc.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fgetpos.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fgets.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\flockfile.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fopen.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fprintf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fputc.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fputs.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fread.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\freopen.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fscanf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fseek.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fsetpos.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\ftell.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\ftrylockfile.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\funlockfile.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\fwrite.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\getc.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\getchar.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\gets.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\perror.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\printf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\putc.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\putchar.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\puts.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\rename.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\rewind.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\scanf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\setbuf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\setvbuf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\snprintf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\sprintf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\sscanf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\tmpnam.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\ungetc.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\vfprintf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\vfscanf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\vprintf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\vscanf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\vsnprintf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\vsprintf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdio\vsscanf.c">
+      <Filter>Source Files\functions\stdio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\_Exit.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\abort.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\abs.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\at_quick_exit.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\atexit.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\atoi.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\atol.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\atoll.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\bsearch.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\div.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\exit.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\labs.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\ldiv.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\llabs.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\lldiv.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\qsort.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\quick_exit.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\rand.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\srand.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\strtol.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\strtoll.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\strtoul.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\stdlib\strtoull.c">
+      <Filter>Source Files\functions\stdlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\time\clock.c">
+      <Filter>Source Files\functions\time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\time\time.c">
+      <Filter>Source Files\functions\time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\time\timespec_get.c">
+      <Filter>Source Files\functions\time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\uchar\_PDCLIB_c16slen.c">
+      <Filter>Source Files\functions\uchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\uchar\_PDCLIB_c32slen.c">
+      <Filter>Source Files\functions\uchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\uchar\_PDCLIB_c32srtombs.c">
+      <Filter>Source Files\functions\uchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\uchar\_PDCLIB_mbsrtoc32s.c">
+      <Filter>Source Files\functions\uchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\uchar\c16rtomb.c">
+      <Filter>Source Files\functions\uchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\uchar\c32rtomb.c">
+      <Filter>Source Files\functions\uchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\uchar\mbrtoc16.c">
+      <Filter>Source Files\functions\uchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\uchar\mbrtoc32.c">
+      <Filter>Source Files\functions\uchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\mbrtowc.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\mbsinit.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcrtomb.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcscat.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcschr.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcscmp.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcscoll.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcscpy.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcscspn.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcslen.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcsncat.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcsncmp.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcsncpy.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcspbrk.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcsrchr.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcsspn.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcsstr.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcstok.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wcsxfrm.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wmemchr.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wmemcmp.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wmemcpy.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wchar\wmemmove.c">
+      <Filter>Source Files\functions\wchar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\iswalnum.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\iswalpha.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\iswblank.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\iswcntrl.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\iswctype.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\iswdigit.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\iswgraph.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\iswlower.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\iswprint.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\iswpunct.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\iswspace.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\iswupper.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\iswxdigit.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\towctrans.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\towlower.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\towupper.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\wctrans.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\wctype\wctype.c">
+      <Filter>Source Files\functions\wctype</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\_PDCLIB\_PDCLIB_ascii.c">
+      <Filter>Source Files\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\_PDCLIB\_PDCLIB_atomax.c">
+      <Filter>Source Files\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\_PDCLIB\_PDCLIB_closeall.c">
+      <Filter>Source Files\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\_PDCLIB\_PDCLIB_digits.c">
+      <Filter>Source Files\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\_PDCLIB\_PDCLIB_initclocale.c">
+      <Filter>Source Files\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\_PDCLIB\_PDCLIB_latin1.c">
+      <Filter>Source Files\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\_PDCLIB\_PDCLIB_seed.c">
+      <Filter>Source Files\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\_PDCLIB\_PDCLIB_strtox_main.c">
+      <Filter>Source Files\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\_PDCLIB\_PDCLIB_strtox_prelim.c">
+      <Filter>Source Files\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\_PDCLIB\_PDCLIB_utf8.c">
+      <Filter>Source Files\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\_PDCLIB\assert.c">
+      <Filter>Source Files\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\_PDCLIB\stdarg.c">
+      <Filter>Source Files\functions\_PDCLIB</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\functions\_dlmalloc\dlmalloc.c">
+      <Filter>Source Files\functions\_dlmalloc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\3rdParty\PDCLib\platform\kernel\includes\signal.h">
+      <Filter>Header Files\platform\kernel\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\platform\kernel\internals\_PDCLIB_config.h">
+      <Filter>Header Files\platform\kernel\internals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\assert.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\ctype.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\errno.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\float.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\inttypes.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\iso646.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\limits.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\locale.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\stdalign.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\stdarg.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\stdbool.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\stddef.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\stdint.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\stdio.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\stdlib.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\stdnoreturn.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\string.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\threads.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\time.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\uchar.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\wchar.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\includes\wctype.h">
+      <Filter>Header Files\includes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\internals\_PDCLIB_aux.h">
+      <Filter>Header Files\internals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\internals\_PDCLIB_clocale.h">
+      <Filter>Header Files\internals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\internals\_PDCLIB_encoding.h">
+      <Filter>Header Files\internals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\internals\_PDCLIB_float.h">
+      <Filter>Header Files\internals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\internals\_PDCLIB_glue.h">
+      <Filter>Header Files\internals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\internals\_PDCLIB_int.h">
+      <Filter>Header Files\internals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\internals\_PDCLIB_io.h">
+      <Filter>Header Files\internals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\internals\_PDCLIB_locale.h">
+      <Filter>Header Files\internals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\platform\kernel\internals\_PDCLIB_threadconfig.h">
+      <Filter>Header Files\platform\kernel\internals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\PDCLib\functions\_dlmalloc\dlmalloc.h">
+      <Filter>Header Files\functions\_dlmalloc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\3rdParty\PDCLib\functions\_PDCLIB\Readme.txt">
+      <Filter>Source Files\functions\_PDCLIB</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

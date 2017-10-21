@@ -2,7 +2,7 @@
 #include "Console.h"
 #include "itoa_64.h"
 
-#include <varargs.h>
+//#include <varargs.h>
 
 int ConW;
 int ConH;

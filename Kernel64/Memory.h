@@ -26,9 +26,9 @@ typedef struct {
 	uint64_t Start;
 	uint64_t Len;
 	uint64_t Type;
-} MapQeueue;
+} MapQueue;
 
-void memory_init(MULTIBOOT_INFO_MMAP* MMapInfo, MapQeueue* Queue, uint64_t Count);
+void memory_init(MULTIBOOT_INFO_MMAP* MMapInfo, MapQueue* Queue, uint64_t Count);
 void memory_add(uint64_t Base, uint64_t Len, uint32_t Type);
 
 BOOL memory_map_frame(uint64_t* PT4Ptr, uint64_t Virtual, uint64_t Physical, uint8_t Type, uint64_t Flags);
