@@ -108,24 +108,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_allocpages.c">
-      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
-    </ClCompile>
-    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_Exit.c">
-      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
-    </ClCompile>
-    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_fileops.c">
-      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
-    </ClCompile>
-    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_freepages.c">
-      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
-    </ClCompile>
-    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_open.c">
-      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
-    </ClCompile>
-    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_rename.c">
-      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
-    </ClCompile>
     <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_stdinit.c">
       <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
     </ClCompile>
@@ -788,6 +770,9 @@
     </ClCompile>
     <ClCompile Include="..\3rdParty\PDCLib\functions\_dlmalloc\dlmalloc.c">
       <Filter>Source Files\functions\_dlmalloc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_syscalls.c">
+      <Filter>Source Files\platform\kernel\functions\_PDCLIB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -8,7 +8,7 @@
 
 #ifndef REGTEST
 
-#pragma weak strlcat = _PDCLIB_strlcat
+//#pragma weak strlcat = _PDCLIB_strlcat
 size_t _PDCLIB_strlcat(
    char *restrict dst,
    const char *restrict src,

@@ -8,6 +8,7 @@
 
 #ifndef REGTEST
 
+#pragma function(wcscpy)
 wchar_t *wcscpy( wchar_t * _PDCLIB_restrict dest, 
                  const wchar_t * _PDCLIB_restrict src)
 {

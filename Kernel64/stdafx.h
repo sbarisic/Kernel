@@ -7,8 +7,10 @@
 
 #define HAS_FLAG(n, f) (((n) & (f)) != 0)
 
-#define MiB 0x100000
 #define KiB 0x400
+#define MiB 0x100000
+#define GiB 0x40000000
+
 
 int gdt_code;
 

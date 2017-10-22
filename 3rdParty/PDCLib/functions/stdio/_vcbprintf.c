@@ -18,7 +18,7 @@ static inline bool cbout(
     size_t size )
 {
     size_t rv = status->write( status->ctx, buf, size );
-    status->i += rv;
+    status->i += (unsigned int)rv;
     return rv == size;
 }
 

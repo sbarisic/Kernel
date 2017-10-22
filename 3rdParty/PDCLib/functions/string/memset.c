@@ -8,6 +8,7 @@
 
 #ifndef REGTEST
 
+#pragma function(memset)
 void * memset( void * s, int c, size_t n )
 {
     unsigned char * p = (unsigned char *) s;

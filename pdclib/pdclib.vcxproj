@@ -239,13 +239,8 @@
     <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\stdio\tmpfile.c" />
     <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\stdlib\getenv.c" />
     <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\stdlib\system.c" />
-    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_allocpages.c" />
-    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_Exit.c" />
-    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_fileops.c" />
-    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_freepages.c" />
-    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_open.c" />
-    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_rename.c" />
     <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_stdinit.c" />
+    <ClCompile Include="..\3rdParty\PDCLib\platform\kernel\functions\_PDCLIB\_PDCLIB_syscalls.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\3rdParty\PDCLib\functions\_dlmalloc\dlmalloc.h" />
@@ -359,7 +354,6 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions);__STDC__=1;__LP64__;_LP64</PreprocessorDefinitions>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
       <AdditionalIncludeDirectories>$(SolutionDir)3rdParty\PDCLib\internals;$(SolutionDir)3rdParty\PDCLib\platform\kernel\includes;$(SolutionDir)3rdParty\PDCLib\platform\kernel\internals;$(SolutionDir)3rdParty\PDCLib\includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -383,7 +377,6 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions);__STDC__=1;__LP64__;_LP64</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)3rdParty\PDCLib\internals;$(SolutionDir)3rdParty\PDCLib\platform\kernel\includes;$(SolutionDir)3rdParty\PDCLib\platform\kernel\internals;$(SolutionDir)3rdParty\PDCLib\includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
@@ -408,7 +401,6 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions);__STDC__=1;__LP64__;_LP64</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)3rdParty\PDCLib\internals;$(SolutionDir)3rdParty\PDCLib\platform\kernel\includes;$(SolutionDir)3rdParty\PDCLib\platform\kernel\internals;$(SolutionDir)3rdParty\PDCLib\includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <CompileAsManaged>false</CompileAsManaged>
@@ -416,6 +408,7 @@
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ExceptionHandling>false</ExceptionHandling>
       <BufferSecurityCheck>false</BufferSecurityCheck>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -435,7 +428,6 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions);__STDC__=1;__LP64__;_LP64</PreprocessorDefinitions>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
       <AdditionalIncludeDirectories>$(SolutionDir)3rdParty\PDCLib\internals;$(SolutionDir)3rdParty\PDCLib\platform\kernel\includes;$(SolutionDir)3rdParty\PDCLib\platform\kernel\internals;$(SolutionDir)3rdParty\PDCLib\includes;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -444,6 +436,7 @@
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ExceptionHandling>false</ExceptionHandling>
       <BufferSecurityCheck>false</BufferSecurityCheck>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

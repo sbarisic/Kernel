@@ -18,7 +18,7 @@ _PDCLIB_uintmax_t _PDCLIB_strtox_main( const char ** p, unsigned int base, uintm
     const char * x;
     while ( ( x = memchr( _PDCLIB_digits, tolower(**p), base ) ) != NULL )
     {
-        digit = x - _PDCLIB_digits;
+		digit = (int)(x - _PDCLIB_digits);
         if ( ( rc < limval ) || ( ( rc == limval ) && ( digit <= limdigit ) ) )
         {
             rc = rc * base + (unsigned)digit;

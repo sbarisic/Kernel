@@ -8,6 +8,7 @@
 
 #ifndef REGTEST
 
+#pragma function(strcat)
 char * strcat( char * _PDCLIB_restrict s1, const char * _PDCLIB_restrict s2 )
 {
     char * rc = s1;

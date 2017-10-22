@@ -20,13 +20,27 @@
 #define MEM_PAGE_GLOBAL			(1<<8)	
 #define MEM_PAGE_AVAIL1			(1<<9)	
 #define MEM_PAGE_AVAIL2			(1<<10)	
-#define MEM_PAGE_AVAIL3			(1<<11) 
+#define MEM_PAGE_AVAIL3			(1<<11)
+
+#define MEM_ENTRY_FREE 0
+#define MEM_ENTRY_ALLOC 1
+
+#define MEM_ENTRY_SRC_POOL 0
+#define MEM_ENTRY_SRC_HEAP 1
 
 typedef struct {
 	uint64_t Start;
 	uint64_t Len;
 	uint64_t Type;
 } MapQueue;
+
+typedef struct _MemoryList {
+	uint64_t Start;
+	uint64_t Len;
+	uint8_t Type;
+
+	struct _MemoryList* Next;
+} MemoryList;
 
 void memory_init(MULTIBOOT_INFO_MMAP* MMapInfo, MapQueue* Queue, uint64_t Count);
 void memory_add(uint64_t Base, uint64_t Len, uint32_t Type);
@@ -35,3 +49,6 @@ BOOL memory_map_frame(uint64_t* PT4Ptr, uint64_t Virtual, uint64_t Physical, uin
 BOOL memory_imap_frame(uint64_t* PT4Ptr, uint64_t Address, uint8_t Type, uint64_t Flags);
 BOOL memory_map_frames(uint64_t* PT4Ptr, uint64_t Virtual, uint64_t Physical, uint8_t Type, uint64_t Count, uint64_t Flags);
 BOOL memory_imap_frames(uint64_t* PT4Ptr, uint64_t Address, uint8_t Type, uint64_t Count, uint64_t Flags);
+
+uint64_t memory_alloc_frame();
+void memory_free_frame(uint64_t Base);

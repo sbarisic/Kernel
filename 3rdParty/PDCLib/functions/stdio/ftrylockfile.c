@@ -24,6 +24,8 @@ int _PDCLIB_ftrylockfile( FILE * file )
         default:
             abort();
     }
+
+	return -1;
 }
 
 #endif

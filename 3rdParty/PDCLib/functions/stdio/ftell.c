@@ -22,7 +22,7 @@ long int _PDCLIB_ftell_unlocked( FILE * stream )
         errno = ERANGE;
         return -1;
     }
-    return off64;
+    return (long)off64;
 }
 
 long int ftell( FILE * stream )

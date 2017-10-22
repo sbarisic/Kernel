@@ -8,6 +8,7 @@
 
 #ifndef REGTEST
 
+#pragma function(wcscat)
 wchar_t * wcscat( wchar_t * _PDCLIB_restrict s1, 
                   const wchar_t * _PDCLIB_restrict s2 )
 {

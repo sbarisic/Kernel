@@ -8,6 +8,7 @@
 
 #ifndef REGTEST
 
+#pragma function(llabs)
 long long int llabs( long long int j )
 {
     return ( j >= 0 ) ? j : -j;

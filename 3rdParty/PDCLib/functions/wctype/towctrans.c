@@ -17,6 +17,8 @@ wint_t _PDCLIB_towctrans_l( wint_t wc, wctrans_t trans, locale_t l )
         case _PDCLIB_WCTRANS_TOUPPER:   return _PDCLIB_towupper_l( wc, l );
         default: abort();
     }
+
+	return 0;
 }
 
 wint_t towctrans( wint_t wc, wctrans_t trans )

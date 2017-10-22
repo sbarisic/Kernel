@@ -53,8 +53,8 @@ static inline bool cbout(
     size_t size )
 {
     size_t rv = status->write( status->ctx, buf, size );
-    status->i       += rv;
-    status->current += rv;
+    status->i       += (unsigned int)rv;
+    status->current += (unsigned int)rv;
     return rv == size;
 }
 
@@ -66,7 +66,7 @@ static inline bool cbrept(
 {
     if ( sizeof(size_t) == 8 && CHAR_BIT == 8)
     {
-        uint64_t spread = UINT64_C(0x0101010101010101) * c;
+		uint64_t spread = (uint64_t)(UINT64_C(0x0101010101010101) * c);
         while ( times )
         {
             size_t n = times > 8 ? 8 : times;
@@ -288,7 +288,7 @@ int _PDCLIB_print( const char * spec, struct _PDCLIB_status_t * status )
         if ( !cbout(status, spec, 1) )
             return -1;
         ++spec;
-        return (spec - orig_spec);
+        return (int)(spec - orig_spec);
     }
     /* Initializing status structure */
     status->flags = 0;
@@ -473,7 +473,7 @@ int _PDCLIB_print( const char * spec, struct _PDCLIB_status_t * status )
             if ( !printchar( va_arg( status->arg, int ), status ) )
                 return -1;
             ++spec;
-            return (spec - orig_spec);
+            return (int)(spec - orig_spec);
         case 's':
             /* TODO: wide chars. */
             {
@@ -481,7 +481,7 @@ int _PDCLIB_print( const char * spec, struct _PDCLIB_status_t * status )
                 if ( !printstr( s, status ) )
                     return -1;
                 ++spec;
-                return (spec - orig_spec);
+                return (int)(spec - orig_spec);
             }
         case 'p':
             status->base = 16;
@@ -492,7 +492,7 @@ int _PDCLIB_print( const char * spec, struct _PDCLIB_status_t * status )
                int * val = va_arg( status->arg, int * );
                *val = status->i;
                ++spec;
-               return (spec - orig_spec);
+               return (int)(spec - orig_spec);
            }
         default:
             /* No conversion specifier. Bad conversion. */
@@ -586,7 +586,7 @@ int _PDCLIB_print( const char * spec, struct _PDCLIB_status_t * status )
         }
     }
     ++spec;
-    return spec - orig_spec;
+	return (int)(spec - orig_spec);
 }
 
 #endif

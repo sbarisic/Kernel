@@ -8,6 +8,7 @@
 
 #ifndef REGTEST
 
+#pragma function(strlen)
 size_t strlen( const char * s )
 {
     size_t rc = 0;
